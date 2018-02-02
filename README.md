@@ -1,14 +1,19 @@
 # WebSphereSpringBootPSGMVC
 Spring Boot App built to run on WebSphere
 
+Sourced From: All related posts by same author
+  http://www.adeveloperdiary.com/java/spring-boot/an-introduction-to-spring-boot/
+  http://www.adeveloperdiary.com/java/spring-boot/create-spring-boot-application-step-step/ 
+  http://www.adeveloperdiary.com/java/spring-boot/create-restful-webservices-using-spring-boot/
+  http://www.adeveloperdiary.com/java/spring-boot/deploy-spring-boot-application-ibm-liberty-8-5/
+  
 URL: 
      http://localhost:9080/psgspringboot
      http://localhost:9080/psgspringboot/student
      http://localhost:9080/psgspringboot/payment
 
 
-View:
-	psgspringboot\psgspringboot-web\src\main\webapp\WEB-INF\jsp\payment.jsp
+View:	psgspringboot\psgspringboot-web\src\main\webapp\WEB-INF\jsp\payment.jsp
 	psgspringboot\psgspringboot-web\src\main\webapp\WEB-INF\jsp\paymentResult.jsp
 	psgspringboot\psgspringboot-web\src\main\webapp\WEB-INF\jsp\result.jsp
 	psgspringboot\psgspringboot-web\src\main\webapp\WEB-INF\jsp\student.jsp
