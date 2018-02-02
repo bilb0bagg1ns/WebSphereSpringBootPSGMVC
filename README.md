@@ -1,28 +1,41 @@
 # WebSphereSpringBootPSGMVC
 Spring Boot App built to run on WebSphere
 
-URL: http://localhost:9080/psgmvc/
+URL: 
+     http://localhost:9080/psgspringboot
+     http://localhost:9080/psgspringboot/student
+     http://localhost:9080/psgspringboot/payment
+
 
 View:
-  psgmvc\psgmvc-web\src\main\webapp\index.jsp
+  psgspringboot\psgspringboot-web\src\main\webapp\WEB-INF\jsp\payment.jsp
+  psgspringboot\psgspringboot-web\src\main\webapp\WEB-INF\jsp\paymentResult.jsp
+  psgspringboot\psgspringboot-web\src\main\webapp\WEB-INF\jsp\result.jsp
+  psgspringboot\psgspringboot-web\src\main\webapp\WEB-INF\jsp\student.jsp
+
+
+Configuration:
+    psgspringboot\psgspringboot-web\src\main\java\com\tp\MvcConfiguration.java
 
 Controller:
-  psgmvc\psgmvc-web\src\main\java\us\co\state\sos\auth\controller\PSGMVCController.java
+  psgspringboot\psgspringboot-web\src\main\java\com\tp\ServletInitializer.java
+  psgspringboot\psgspringboot-web\src\main\java\com\tp\StudentController.java
+
   
 Service:
   psgmvc\psgmvc-web\src\main\java\us\co\state\sos\auth\service\LoginService.java
   
 WEB-INF:
-  psgmvc\psgmvc-web\src\main\webapp\WEB-INF\web.xml
-
-	<servlet-mapping>
-	  <servlet-name>psgmvc</servlet-name>
-	  <url-pattern>/welcome.jsp</url-pattern>
+  psgspringboot\psgspringboot-web\src\main\webapp\WEB-INF\web.xml
+	<servlet>
+		<servlet-name>psgspringboot</servlet-name>
+		<servlet-class> org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+		<servlet-mapping>
+		<servlet-name>psgspringboot</servlet-name>
+		<url-pattern>/</url-pattern>       
 	</servlet-mapping>
 
-	<welcome-file-list>
-	  <welcome-file>index.jsp</welcome-file>
-	</welcome-file-list>
-
-  psgmvc\psgmvc-web\src\main\webapp\WEB-INF\psgmvc-servlet.xml
+  psgspringboot\psgspringboot-web\src\main\webapp\WEB-INF\psgspringboot-servlet.xml
   
