@@ -16,13 +16,13 @@ WEB-INF:
   psgmvc\psgmvc-web\src\main\webapp\WEB-INF\web.xml
 
 	<servlet-mapping>
-        <servlet-name>psgmvc</servlet-name>
-        <url-pattern>/welcome.jsp</url-pattern>
- </servlet-mapping>
- 
-   <welcome-file-list>
-    <welcome-file>index.jsp</welcome-file>
-  </welcome-file-list>
-  
+	  <servlet-name>psgmvc</servlet-name>
+	  <url-pattern>/welcome.jsp</url-pattern>
+	</servlet-mapping>
+
+	<welcome-file-list>
+	  <welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
   psgmvc\psgmvc-web\src\main\webapp\WEB-INF\psgmvc-servlet.xml
   
