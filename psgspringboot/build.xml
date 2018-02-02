@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Build" default="all">
+	<target name="all" depends="release, deploy, checkin" />
+
+	<target name="preinit" unless="initialized">
+		<property name="project.dir" value="${basedir}"/>
+		<property file="${project.dir}\build.properties"/>
+		<property name="common.dir" value="C:\views\common\common"/>
+		<property name="common.lib.dir" value="${common.dir}\Lib" />
+		<property name="common.lib.project.dir" value="${common.lib.dir}\${project}" />
+		<tstamp/>
+		<property name="stage.dir" value="T:\IS\Developers\Builds"/>
+		<property name="stage.project.dir" value="${stage.dir}\${project}\${project}.${DSTAMP}.${TSTAMP}" />
+		<property name="repo.dir" value="C:\repo"/>
+		<property name="repo.lib.dir" value="${repo.dir}\lib\trunk"/>
+	</target>
+
+	<target name="calcTargetDir" depends="calcJarTargetDir, calcEarTargetDir" />
+	
+	<target name="calcJarTargetDir" unless="ear.module">
+		<property name="target.dir" value="${project.dir}\target" />
+		<property name="target.pattern" value="*.jar" />
+	</target>
+		
+	<target name="calcEarTargetDir" if="ear.module">
+		<property name="target.dir" value="${project.dir}\${ear.module}\target" />
+		<property name="target.pattern" value="*-ear-*.ear" />
+	</target>
+	
+	<target name="init" depends="preinit, calcTargetDir" unless="initialized">
+		<echo message="project.dir=${project.dir}" />
+		<echo message="project=${project}" />
+		<echo message="project.file=${project.file}" />
+		<echo message="common.lib.project.dir=${common.lib.project.dir}" />
+		<echo message="stage.project.dir=${stage.project.dir}" />
+		<echo message="ear.module=${ear.module}" />
+		<echo message="target.dir=${target.dir}" />
+		<echo message="target.pattern=${target.pattern}" />
+		<echo message="DSTAMP=${DSTAMP}" />
+		<echo message="TSTAMP=${TSTAMP}" />
+		
+		<property name="initialized" value="true" />
+	</target>
+	
+	<target name="release" depends="init">
+		<mvn args="-B release:clean release:prepare release:perform -Dgoals=deploy" />
+	</target>
+		
+	<target name="deploy" depends="init">
+		<unzip dest="${target.dir}">
+			<fileset dir="${target.dir}">
+				<include name="${target.pattern}"/>
+			</fileset>
+			<patternset>
+				<include name="**/pom.properties"/>
+			</patternset>
+			<mapper type="flatten"/>
+		</unzip>
+
+		<loadproperties>
+			<file file="${target.dir}/pom.properties"/>
+		</loadproperties>
+		
+		<echo message="version=${version}" />
+
+		<zip destfile="${target.dir}\${project.file}" duplicate="preserve">
+			<zipgroupfileset dir="${target.dir}" includes="${target.pattern}"/>
+		</zip>
+		
+		<copy file="${target.dir}\${project.file}"
+			tofile="${stage.project.dir}-${version}\${project.file}"
+			overwrite="true"
+			verbose="true" />
+
+		<antcall target="deploy-internal" />
+	</target>
+
+	<target name="deploy-internal" if="internal.ear.module">
+		<echo message="Creating internal deployment..." />
+		<property name="project.dir" value="${internal.ear.module}.ear"/>
+
+		<copy file="${target.dir}/${project.file}"
+			tofile="${target.dir}/${internal.ear.module}.ear"
+			overwrite="true"
+			verbose="true" />
+
+		<unzip src="${target.dir}/${internal.ear.module}.ear" dest="${target.dir}">
+			<patternset>
+				<include name="${project.war.file}"/>
+			</patternset>
+		</unzip>
+		<unzip src="${target.dir}/${project.war.file}" dest="${target.dir}">
+			<patternset>
+				<include name="WEB-INF/web.xml"/>
+			</patternset>
+		</unzip>
+
+		<replaceregexp file="${target.dir}/WEB-INF/web.xml" match=".xyz" replace=".do" flags="g" byline="false" />
+
+		<zip destfile="${target.dir}/${project.war.file}" update="true">
+			<zipfileset dir="${target.dir}" includes="WEB-INF/*" />
+		</zip>
+
+		<zip destfile="${target.dir}/${internal.ear.module}.ear" update="true">
+			<zipfileset file="${target.dir}/${project.war.file}" />
+		</zip>
+
+		<mvn dir="${target.dir}" args="deploy:deploy-file -Dfile=${internal.ear.module}.ear -DrepositoryId=sos-releases -Durl=http://rhbuild:8081/nexus/content/repositories/releases/ -DgroupId=${groupId} -DartifactId=${internal.ear.module} -Dversion=${version} -Dpackaging=ear" />
+
+		<copy file="${target.dir}\${internal.ear.module}.ear"
+			tofile="${stage.project.dir}-${version}\${internal.ear.module}.ear"
+			overwrite="true"
+			verbose="true" />
+	</target>
+	
+	<!-- Checkout file from VCS, copy over, checkin -->
+	<target name="checkin" depends="init" unless="ear.module">
+		<echo>Updating ${repo.lib.dir}...</echo>
+		<svn args="update ${repo.lib.dir}" />
+
+		<echo>Copying ${stage.project.dir}-${version}\${project.file} to ${repo.lib.dir}...</echo>
+		<copy file="${stage.project.dir}-${version}\${project.file}"
+			tofile="${repo.lib.dir}\${project.file}"
+			overwrite="true"
+			verbose="true" />
+	
+		<echo>Checking in ${project.file}...</echo>
+		<svn args="commit ${repo.lib.dir}\${project.file} --message new_release" />
+	</target> 
+	
+	<macrodef name="mvn">
+		<attribute name="dir" default="${project.dir}" />
+		<attribute name="args"/>
+		<sequential>
+			<exec executable="cmd" dir="@{dir}" failonerror="true">
+				<arg line="/c mvn.bat @{args}"/>
+			</exec>		
+		</sequential>
+	</macrodef>
+
+	<macrodef name="svn">
+		<attribute name="args"/>
+		<sequential>
+			<exec executable="cmd" dir="${project.dir}" failonerror="true">
+				<arg line="/c svn --non-interactive @{args}"/>
+			</exec>		
+		</sequential>
+	</macrodef>
+</project>

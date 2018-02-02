@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>psgspringboot-ear</artifactId>
+	<packaging>ear</packaging>
+	<version>1.1.54-SNAPSHOT</version>
+	<name>PSGSPRINGBOOT EAR</name>
+
+	<parent>
+		<groupId>us.co.state.sos</groupId>
+		<artifactId>sos-parent-pom</artifactId>
+		<version>RELEASE</version>
+	</parent>
+
+ 
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+				<version>2.7</version>
+				<configuration>
+					<version>5</version>
+					<defaultJavaBundleDir>lib</defaultJavaBundleDir>
+					<generateApplicationXml>false</generateApplicationXml>
+					<fileNameMapping>no-version</fileNameMapping>
+					<earSourceDirectory>${basedir}\src\main\application</earSourceDirectory>
+					<modules>
+						<webModule>
+							<groupId>us.co.state.sos</groupId>
+							<artifactId>psgspringboot-web</artifactId>
+							<bundleFileName>psgspringboot-web.war</bundleFileName>
+						</webModule>
+					</modules>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>us.co.state.sos</groupId>
+			<artifactId>psgspringboot-web</artifactId>
+			<version>${project.version}</version>
+ 			<type>war</type>
+		</dependency>
+	</dependencies>
+</project>

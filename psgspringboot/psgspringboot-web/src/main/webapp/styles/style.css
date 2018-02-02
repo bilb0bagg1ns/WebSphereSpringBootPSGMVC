@@ -1,0 +1,284 @@
+<!--  THIS IS THE STYLESHEET FOR ALL STATIC AND APPLICATION PAGES  -->
+
+
+BODY	{font-family: Arial, Helvetica, sans-serif;
+	 	 font-size: 12px;
+		 background-color:#FFFFFF;
+	 	 color: #000000;}
+
+.smallheader	{font-family: Arial, Helvetica, sans-serif;
+				 font-size: 14px;
+				 color: #000000;
+				 font-weight: bold;}
+				 
+.divheader{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	color: #000066;
+}
+
+.pagehead1	{font-family: Arial, Helvetica, sans-serif;
+			 font-size: 28px;
+			 color: #000066;
+			 font-weight: bold;}
+
+.toplinks	{font:  11px verdana, Arial, Helvetica, sans-serif;
+			 color: #ffffff;
+			 line-height: 12px;}
+			 
+.toplinks a		{color: #ffffff;
+				 text-decoration: none;}
+				 
+.toplinks a:hover	{color: #ffffff;
+					 text-decoration: underline;}
+			 
+.leftnav {font-family: verdana, Arial, Helvetica, sans-serif;
+					  font-size: 10px;
+					  font-weight: bold;
+					  color: #666666;
+					  text-decoration: none;}
+
+.leftnav:hover	{color: #0000ff;
+	text-decoration: underline;}	
+	
+
+.hoverlinks		{font:  12px Arial, Helvetica, sans-serif;
+			 	color: #000000;}
+
+.hoverlinks a	{color: #000000;
+			   	text-decoration: none;}
+			 
+.hoverlinks a:hover		{color: #0000ff;
+						text-decoration: underline;}
+
+.hoverlinks-ul-blk{
+	font:  12px Arial, Helvetica, sans-serif;
+	color: #000;
+	margin-top: 2px; 
+	margin-bottom: 0px; 
+	margin-left: 8px; 
+	padding-left: 1.5em; 
+	list-style : disc;
+}
+.hoverlinks-ul-blk a{
+	color: #000000;
+	text-decoration: none;
+}
+.hoverlinks-ul-blk a:hover{
+	color: #0000ff;
+	text-decoration: underline;
+}
+
+
+.helplinks {
+	font:  12px Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	color: #000000;
+}
+.helplinks a{
+	color: #000000;
+	text-decoration: none;
+}
+.helplinks a:hover{
+	color: #0000ff;
+	text-decoration: underline;
+}
+
+
+A.FileDoc:link		{font-family: Times New Roman, Times, serif;
+					 color: #000000; 
+					 text-decoration: none;
+					 font-size: 10pt;}
+
+A.FileDoc:visited		{font-family: Times New Roman, Times, serif;
+					 	 color: #000000; 
+					 	 text-decoration: none;
+					 	 font-size: 10pt;}
+
+A.FileDoc:active		{font-family: Times New Roman, Times, serif;
+					 	 color: #000000; 
+					 	 text-decoration: none;
+					 	 font-size: 10pt;}
+
+A.FileDoc:hover		{font-family: Times New Roman, Times, serif;
+					 	 color: #000000; 
+					 	 text-decoration: underline;
+					 	 font-size: 10pt;}
+
+A.FileDocUnderline:link		{font-family: Times New Roman, Times, serif;
+					 color: #000000; 
+					 text-decoration: underline;
+					 font-size: 10pt;}
+
+A.FileDocUnderline:visited		{font-family: Times New Roman, Times, serif;
+					 	 color: #000000; 
+					 	 text-decoration: underline;
+					 	 font-size: 10pt;}
+						 
+A.FileDocLarge:link		{font-family: Times New Roman, Times, serif;
+				   	     color: #000000; 
+					     text-decoration: underline;
+					     font-size: 14pt;}
+
+A.FileDocLarge:visited		{font-family: Times New Roman, Times, serif;
+					 	     color: #000000; 
+					 	     text-decoration: underline;
+					 	     font-size: 14pt;}
+
+A.FileDocLarge:active		{font-family: Times New Roman, Times, serif;
+					 	     color: #000000; 
+					 	     text-decoration: underline;
+					 	     font-size: 14pt;}
+
+A.TxnStatutes:link        {FONT-FAMILY: Arial, Helvetica, sans-serif;
+			               COLOR:#003366;
+			               FONT-SIZE: 9pt;}
+A.TxnStatutes:visited     {FONT-FAMILY: Arial, Helvetica, sans-serif;
+			               COLOR:#003366;
+			               FONT-SIZE: 9pt;}
+A.TxnStatutes:active      {FONT-FAMILY: Arial, Helvetica, sans-serif;
+			               COLOR:#003366;
+			               FONT-SIZE: 9pt;}
+
+
+TD			{FONT-FAMILY: Arial, Helvetica, sans-serif;
+			COLOR:#000000;
+			FONT-SIZE: 10pt;}
+		
+P			{FONT-FAMILY: arial, verdana;
+			COLOR:#000000;
+			FONT-SIZE: 10pt;}
+			
+B			{FONT-FAMILY: arial, verdana;
+			COLOR:#000000;
+			FONT-SIZE: 10pt;}
+			
+I			{FONT-FAMILY: arial, verdana;
+			COLOR:#000000;
+			FONT-SIZE: 10pt;}
+			
+UL			{FONT-FAMILY: arial, verdana;
+			COLOR:#000000;
+			FONT-SIZE: 10pt;}
+			
+LI			{FONT-FAMILY: arial, verdana;
+			COLOR:#000000;
+			FONT-SIZE: 10pt;}						
+			
+H1			{FONT-FAMILY: arial, verdana;
+			COLOR:#000000;
+			FONT-SIZE: 14pt;}
+			
+H2			{FONT-FAMILY: arial, verdana;
+			COLOR:#000000;
+			FONT-SIZE: 13pt;}
+			
+H3			{FONT-FAMILY: arial, verdana;
+			COLOR:#000000;
+			FONT-SIZE: 12pt;}
+			
+H4			{FONT-FAMILY: arial, verdana;
+			COLOR:#000000;
+			FONT-SIZE: 10pt;}
+																	
+.sm			{FONT-FAMILY: arial, verdana;
+			COLOR:#000000;
+			FONT-SIZE: 8pt;}
+			
+		
+.page_hdg  {FONT-FAMILY: verdana, arial, verdana;
+			COLOR:#000099;
+			FONT-SIZE: 18pt;
+			font-weight : bold;}
+			
+.page_hdgsub  {FONT-FAMILY: verdana, arial, verdana;
+				COLOR:#000099;
+				FONT-SIZE: 14pt;
+				font-weight : bold;}			
+			
+.page_hdgsubsmall  {FONT-FAMILY: verdana, arial, verdana;
+				COLOR:#000099;
+				FONT-SIZE: 11pt;
+				font-weight : bold;}						
+	
+.page_messages  {FONT-FAMILY: arial, verdana;
+			     COLOR:#DD0000;
+			     FONT-SIZE: 10pt;
+			     font-weight : normal;}			
+	
+.page_errors  {FONT-FAMILY: arial, verdana;
+			     COLOR:#DD0000;
+			     FONT-SIZE: 10pt;
+			     font-weight : normal;}			
+	
+.page_description  {FONT-FAMILY: arial, verdana;
+			     COLOR:blue;
+			     FONT-SIZE: 12pt;
+			     font-weight : normal;}			
+	
+.bottom_links		{FONT-FAMILY: arial, verdana;
+					 COLOR:#FFFFFF;
+					 FONT-SIZE: 8pt;}			
+
+/*  .group_title is for a title of a group of input elements */
+.group_title   {FONT-FAMILY: Arial, Helvetica, sans-serif;
+				COLOR:#000000;
+			    font-weight : bold;			
+				FONT-SIZE: 10pt;}
+
+/*  .group_title is for a title of a group of input elements */
+.warning_error_msg   {FONT-FAMILY: Times New Roman, Times, serif;
+				COLOR:red;
+			    font-weight : bold;			
+				FONT-SIZE: 14pt;}
+
+/*  .txn_provision is legal provisions included on a transaction form */
+.txn_provision   {FONT-FAMILY: Times New Roman, Times, serif;
+				  COLOR:#000000;
+			      font-weight : normal;			
+				  FONT-SIZE: 10pt;
+				  font-style: italic;}
+
+.normal_italic   {FONT-FAMILY: Times New Roman, Times, serif;
+				  COLOR:#000000;
+			      font-weight : normal;			
+				  FONT-SIZE: 11pt;
+				  font-style: italic;}
+
+.small_italic    {FONT-FAMILY: Times New Roman, Times, serif;
+				  COLOR:#000000;
+			      font-weight : normal;			
+				  FONT-SIZE: 8pt;
+				  font-style: italic;}
+
+.txn_statutes	{FONT-FAMILY: Arial, Helvetica, sans-serif;
+			     COLOR:#000000;
+			     FONT-SIZE: 10pt;}
+
+.rules_text_bold    {FONT-FAMILY: Times New Roman, Times, serif;
+				     COLOR:#000000;
+			         font-weight : bold;			
+				     FONT-SIZE: 12pt;}
+
+.rules_text_normal    {FONT-FAMILY: Times New Roman, Times, serif;
+				       COLOR:#000000;
+		 	           font-weight : normal;			
+				       FONT-SIZE: 12pt;}
+.txn_statutes	{FONT-FAMILY: Arial, Helvetica, sans-serif;
+			     COLOR:#000000;
+			     FONT-SIZE: 10pt;}
+
+.staticTextValue	{FONT-FAMILY: Arial, Helvetica, sans-serif;
+			         COLOR:#000000;
+					 FONT-SIZE: 11pt;}
+.required_field{
+	font-family: arial, verdana;
+	color: #DD0000;
+	font-size: 10pt;
+	font-weight: bold;
+}
+
+ 
+
+
+

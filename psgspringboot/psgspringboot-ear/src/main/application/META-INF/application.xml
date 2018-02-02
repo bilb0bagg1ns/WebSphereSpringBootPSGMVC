@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/application_5.xsd" id="Application_ID" version="5">
+  <display-name>PSGSPRINGBOOT-ear</display-name>
+  <module id="WebModule_1303145205590">
+    <web>
+      <web-uri>psgspringboot-web.war</web-uri>
+      <context-root>psgspringboot</context-root>
+    </web>
+  </module>
+  <!-- 
+  <security-role id="SecurityRole_1300988071795">
+    <description>
+		Authentications-Administrator</description>
+    <role-name>ATHN_ADM</role-name>
+  </security-role>
+  <security-role id="SecurityRole_1300988071796">
+    <description>
+		Authentications-General</description>
+    <role-name>ATHN_GEN</role-name>
+  </security-role>
+  <library-directory>lib</library-directory>
+   -->
+</application>
