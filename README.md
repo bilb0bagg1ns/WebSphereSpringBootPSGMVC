@@ -8,22 +8,22 @@ URL:
 
 
 View:
-  psgspringboot\psgspringboot-web\src\main\webapp\WEB-INF\jsp\payment.jsp
-  psgspringboot\psgspringboot-web\src\main\webapp\WEB-INF\jsp\paymentResult.jsp
-  psgspringboot\psgspringboot-web\src\main\webapp\WEB-INF\jsp\result.jsp
-  psgspringboot\psgspringboot-web\src\main\webapp\WEB-INF\jsp\student.jsp
+	psgspringboot\psgspringboot-web\src\main\webapp\WEB-INF\jsp\payment.jsp
+	psgspringboot\psgspringboot-web\src\main\webapp\WEB-INF\jsp\paymentResult.jsp
+	psgspringboot\psgspringboot-web\src\main\webapp\WEB-INF\jsp\result.jsp
+	psgspringboot\psgspringboot-web\src\main\webapp\WEB-INF\jsp\student.jsp
 
 
 Configuration:
-    psgspringboot\psgspringboot-web\src\main\java\com\tp\MvcConfiguration.java
+	psgspringboot\psgspringboot-web\src\main\java\com\tp\MvcConfiguration.java
 
 Controller:
-  psgspringboot\psgspringboot-web\src\main\java\com\tp\ServletInitializer.java
-  psgspringboot\psgspringboot-web\src\main\java\com\tp\StudentController.java
+	psgspringboot\psgspringboot-web\src\main\java\com\tp\ServletInitializer.java
+	psgspringboot\psgspringboot-web\src\main\java\com\tp\StudentController.java
 
   
 Service:
-  psgmvc\psgmvc-web\src\main\java\us\co\state\sos\auth\service\LoginService.java
+	psgmvc\psgmvc-web\src\main\java\us\co\state\sos\auth\service\LoginService.java
   
 WEB-INF:
   psgspringboot\psgspringboot-web\src\main\webapp\WEB-INF\web.xml
